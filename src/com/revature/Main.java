@@ -49,24 +49,15 @@ public class Main {
             int selection = scanner.nextInt();
             Calculator calculator = new Calculator(firstNumber, secondNumber);
             switch (selection) {
-                case 1:
-                    System.out.println("Result: " + calculator.Addition());
-                    break;
-                case 2:
-                    System.out.println("Result: " + calculator.subtraction());
-                    break;
-                case 3:
-                    System.out.println("Result: " + calculator.multiplication());
-                    break;
-                case 4:
-                    calculator.division();
-                    break;
-                case 5:
+                case 1 -> System.out.println("Result: " + calculator.Addition());
+                case 2 -> System.out.println("Result: " + calculator.subtraction());
+                case 3 -> System.out.println("Result: " + calculator.multiplication());
+                case 4 -> calculator.division();
+                case 5 -> {
                     System.out.println("Goodbye :)!");
                     cont = false;
-                    break;
-                default:
-                    System.out.println("wrong input!");
+                }
+                default -> System.out.println("wrong input!");
             }
         }while (cont);
 
