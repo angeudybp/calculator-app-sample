@@ -36,29 +36,39 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner =new Scanner(System.in);
-        System.out.println("------------Calculator App------------");
-        System.out.println("Enter First number: ");
-        double firstNumber = scanner.nextDouble();
-        System.out.println("Enter Second number: ");
-        double secondNumber = scanner.nextDouble();
-        System.out.println("Select an Option: ");
-        System.out.println("1- Add\n2- Subtract \n3- Multiply \n4- Divide");
-        int selection = scanner.nextInt();
-        Calculator calculator = new Calculator(firstNumber,secondNumber);
-        switch (selection){
-            case 1:
-                System.out.println("Result: "+ calculator.Addition());
-                break;
-            case 2:
-                System.out.println("Result: "+calculator.subtraction());
-                break;
-            case 3:
-                System.out.println("Result: "+calculator.multiplication());
-                break;
-            case 4:
-                calculator.division();
-                break;
-        }
+        boolean cont = true;
+
+        do {
+            System.out.println("------------Calculator App------------");
+            System.out.println("Enter First number: ");
+            double firstNumber = scanner.nextDouble();
+            System.out.println("Enter Second number: ");
+            double secondNumber = scanner.nextDouble();
+            System.out.println("Select an Option: ");
+            System.out.println("1- Add\n2- Subtract \n3- Multiply \n4- Divide \n5- exit");
+            int selection = scanner.nextInt();
+            Calculator calculator = new Calculator(firstNumber, secondNumber);
+            switch (selection) {
+                case 1:
+                    System.out.println("Result: " + calculator.Addition());
+                    break;
+                case 2:
+                    System.out.println("Result: " + calculator.subtraction());
+                    break;
+                case 3:
+                    System.out.println("Result: " + calculator.multiplication());
+                    break;
+                case 4:
+                    calculator.division();
+                    break;
+                case 5:
+                    System.out.println("Goodbye :)!");
+                    cont = false;
+                    break;
+                default:
+                    System.out.println("wrong input!");
+            }
+        }while (cont);
 
 
 
